@@ -11,6 +11,6 @@ COPY --link --chown=1000 . .
 
 RUN npm i
 
-RUN --mount=type=secret,id=DOTENV_LOCAL,dst=.env.local npm run build
+RUN npm run build
 
 CMD pm2 start build/index.js -i $CPU_CORES --no-daemon
